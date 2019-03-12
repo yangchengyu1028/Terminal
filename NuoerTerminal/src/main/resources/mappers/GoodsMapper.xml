@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ycy.mapper.GoodsMapper">
+  <resultMap id="BaseResultMap" type="com.ycy.entity.GoodsEntity">
+    <id column="goods_id" jdbcType="INTEGER" property="goods_id" />
+    <result column="symptom_id" jdbcType="INTEGER" property="symptom_id" />
+    <result column="supplier_id" jdbcType="INTEGER" property="supplier_id" />
+    <result column="brand_id" jdbcType="INTEGER" property="brand_id" />
+    <result column="goods_sn" jdbcType="VARCHAR" property="goods_sn" />
+    <result column="bar_code" jdbcType="VARCHAR" property="bar_code" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goods_name" />
+    <result column="goods_number" jdbcType="INTEGER" property="goods_number" />
+    <result column="goods_weight" jdbcType="VARCHAR" property="goods_weight" />
+    <result column="shop_price" jdbcType="VARCHAR" property="shop_price" />
+    <result column="goods_brief" jdbcType="VARCHAR" property="goods_brief" />
+    <result column="goods_img" jdbcType="VARCHAR" property="goods_img" />
+    <result column="common_name" jdbcType="VARCHAR" property="common_name" />
+    <result column="manufacturer" jdbcType="VARCHAR" property="manufacturer" />
+    <result column="goods_attr" jdbcType="VARCHAR" property="goods_attr" />
+    <result column="license_number" jdbcType="VARCHAR" property="license_number" />
+  </resultMap>
+    <sql id="Base_Column_List">
+    goods_id, symptom_id, supplier_id, brand_id,goods_sn,bar_code,goods_name,goods_number,goods_weight,shop_price,goods_brief,goods_img,common_name,
+    manufacturer,goods_attr,license_number
+  </sql>
+
+  <select id="getAllBySymptom" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from goods
+    where symptom_id = #{symptomId}
+  </select>
+
+</mapper>
