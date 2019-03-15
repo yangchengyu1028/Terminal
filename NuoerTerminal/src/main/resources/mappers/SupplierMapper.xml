@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ycy.mapper.SupplierMapper">
+    <resultMap id="BaseResultMap" type="com.ycy.entity.SupplierEntity">
+        <id column="supplier_id" jdbcType="INTEGER" property="supplier_id" />
+        <result column="supplier_name" jdbcType="VARCHAR" property="supplier_name" />
+        <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    </resultMap>
+    <sql id="Base_Column_List">
+      supplier_id,supplier_name,mobile
+    </sql>
+
+    <select id="getByMobile" parameterType="java.lang.String"  resultType="com.ycy.entity.SupplierEntity">
+        select
+        <include refid="Base_Column_List" />
+        from supplier
+        where mobile = ${mobile}
+    </select>
+
+</mapper>

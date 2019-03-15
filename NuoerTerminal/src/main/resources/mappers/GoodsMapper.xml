@@ -28,7 +28,7 @@
     select 
     <include refid="Base_Column_List" />
     from goods
-    where symptom_id = #{symptomId}
+    where symptom_id = #{symptomId} and supplier_id= #{supplierId}
   </select>
 
 </mapper>

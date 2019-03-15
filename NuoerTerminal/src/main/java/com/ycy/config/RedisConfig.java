@@ -2,6 +2,7 @@ package com.ycy.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -23,15 +24,10 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @EnableCaching//开启注解
 public class RedisConfig {
     @Bean
-    public CacheManager cacheManager(RedisTemplate<?, ?> redisTemplate) {
-        //CacheManager cacheManager = new RedisCacheManager(redisTemplate);
-        //return cacheManager;
-        RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
-        // 多个缓存的名称,目前只定义了一个
-        // rcm.setCacheNames(Arrays.asList("thisredis"));
-        //设置缓存默认过期时间(秒)
-        rcm.setDefaultExpiration(600);
-        return rcm;
+    public CacheManager cacheManager(@SuppressWarnings("rawtypes") RedisTemplate redisTemplate) {
+        RedisCacheManager rm = new RedisCacheManager(redisTemplate);
+        rm.setDefaultExpiration(20);// 设置缓存时间
+        return rm;
     }
     // 以下两种redisTemplate自由根据场景选择
     @Bean
@@ -45,6 +41,7 @@ public class RedisConfig {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         mapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         serializer.setObjectMapper(mapper);
 
         template.setValueSerializer(serializer);

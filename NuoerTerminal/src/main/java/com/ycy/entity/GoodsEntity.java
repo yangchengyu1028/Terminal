@@ -1,9 +1,14 @@
 package com.ycy.entity;
 
 
+import com.baomidou.mybatisplus.annotations.TableName;
+
 import java.io.Serializable;
 
-
+/**
+ * 商品
+ */
+@TableName("goods")
 public class GoodsEntity implements Serializable {
 
     private static final long serialVersionUID = -5592750933100318863L;
@@ -151,4 +156,5 @@ public class GoodsEntity implements Serializable {
     public void setLicense_number(String license_number) {
         this.license_number = license_number;
     }
+
 }
