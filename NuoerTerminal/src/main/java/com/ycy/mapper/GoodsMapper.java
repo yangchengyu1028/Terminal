@@ -1,17 +1,17 @@
 package com.ycy.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.baomidou.mybatisplus.plugins.pagination.Pagination;
 import com.ycy.entity.GoodsEntity;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
 
 @Mapper
 public interface GoodsMapper extends BaseMapper<GoodsEntity> {
 
 
-    List<GoodsEntity> getAllBySymptom(Pagination page, @Param("symptomId") Integer symptomId,@Param("supplierId")int supplierId);
+    GoodsEntity getGoodsByBarCode(@Param("barcode") String barcode,@Param("supplierId")int supplierId);
+
+    GoodsEntity getGoodsById(@Param("goodsId") int goodsId,@Param("supplierId")int supplierId);
 
 }

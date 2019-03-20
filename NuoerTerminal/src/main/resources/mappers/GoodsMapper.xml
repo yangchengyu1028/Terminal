@@ -24,11 +24,18 @@
     manufacturer,goods_attr,license_number
   </sql>
 
-  <select id="getAllBySymptom" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+  <select id="getGoodsByBarCode"   resultType="com.ycy.entity.GoodsEntity">
     select 
     <include refid="Base_Column_List" />
     from goods
-    where symptom_id = #{symptomId} and supplier_id= #{supplierId}
+    where bar_code = #{barcode} and supplier_id= #{supplierId}
+  </select>
+
+  <select id="getGoodsById"   resultType="com.ycy.entity.GoodsEntity">
+    select
+    <include refid="Base_Column_List" />
+    from goods
+    where goods_id = #{goodsId} and supplier_id= #{supplierId}
   </select>
 
 </mapper>

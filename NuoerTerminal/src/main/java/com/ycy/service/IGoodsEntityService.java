@@ -24,4 +24,30 @@ public interface IGoodsEntityService extends IService<GoodsEntity> {
      * @return
      */
     Page<GoodsEntity> getAllByBrand(Page<GoodsEntity> page,Integer brandId,Integer supplierId);
+
+    /**
+     * 根据药品名模糊查询药品并分页
+     * @param page
+     * @param name
+     * @param supplierId
+     * @return
+     */
+    Page<GoodsEntity> getGoodsByName(Page<GoodsEntity> page,String name,Integer supplierId);
+
+    /**
+     *根据药品条形码查询药品
+     * @param name
+     * @param supplierId
+     * @return
+     */
+    GoodsEntity getGoodsByBarCode(String name,Integer supplierId);
+
+    /**
+     * 根据id获取唯一药品
+     * @param goodsId
+     * @param supplierId
+     * @return
+     */
+    GoodsEntity getGoodsById(int goodsId,Integer supplierId);
+
 }

@@ -51,12 +51,62 @@ public class GoodsController {
         return goodsPage;
     }
 
+    /**
+     * 得到所有症状并分页
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
     @RequestMapping("/getAllSymptom")
     @ResponseBody
     public Page<SymptomEntity> getAllSymptom(int pageNo, int pageSize) {
         Page<SymptomEntity> page = new Page<>(pageNo,pageSize);
         Page<SymptomEntity> goodsPage = symptomEntityService.getListOfSymptom(page);
         return goodsPage;
+    }
+
+    /**
+     * 根据药品名模糊查询并分页
+     * @param pageNo
+     * @param pageSize
+     * @param name
+     * @param request
+     * @return
+     */
+    @RequestMapping("/getGoodsByName")
+    @ResponseBody
+    public Page<GoodsEntity> getAllSymptom(int pageNo, int pageSize,String name, HttpServletRequest request) {
+        Page<GoodsEntity> page = new Page<>(pageNo,pageSize);
+        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByName(page,name,(int)request.getSession().getAttribute("supplierId"));
+        return goodsPage;
+    }
+
+    /**
+     * 根据药品条形码查询药品（唯一）
+     * @param barcode
+     * @param request
+     * @return
+     */
+    @RequestMapping("/getGoodsByBarCode")
+    @ResponseBody
+    public GoodsEntity getGoodsByBarCode(String barcode,HttpServletRequest request){
+
+        GoodsEntity goodsEntity = goodsEntityService.getGoodsByBarCode(barcode,(int)request.getSession().getAttribute("supplierId"));
+        return goodsEntity;
+    }
+
+    /**
+     * 通过id获取该店铺某个商品
+     * @param goodsId
+     * @param request
+     * @return
+     */
+    @RequestMapping("/getGoodsById")
+    @ResponseBody
+    public GoodsEntity getGoodsById(int goodsId,HttpServletRequest request){
+
+        GoodsEntity goodsEntity = goodsEntityService.getGoodsById(goodsId,(int)request.getSession().getAttribute("supplierId"));
+        return goodsEntity;
     }
 
 }
