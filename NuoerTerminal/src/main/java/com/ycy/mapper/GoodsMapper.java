@@ -2,6 +2,7 @@ package com.ycy.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.ycy.entity.GoodsEntity;
+import com.ycy.vo.GoodsVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -10,8 +11,13 @@ import org.apache.ibatis.annotations.Param;
 public interface GoodsMapper extends BaseMapper<GoodsEntity> {
 
 
-    GoodsEntity getGoodsByBarCode(@Param("barcode") String barcode,@Param("supplierId")int supplierId);
+    GoodsVO getLocalGoodsByBarCode(@Param("barcode") String barcode,@Param("supplierId") Integer supplierId);
 
-    GoodsEntity getGoodsById(@Param("goodsId") int goodsId,@Param("supplierId")int supplierId);
+    GoodsVO getOnlineGoodsByBarCode(@Param("barcode") String barcode);
+
+    GoodsVO getGoodsByIdToVo(@Param("goodsId") int goodsId);
+
+
+    GoodsEntity getGoodsByIdToEntity(@Param("goodsId") int goodsId);
 
 }

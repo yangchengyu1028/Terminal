@@ -15,25 +15,22 @@ public class LoginController {
     @Autowired
     private ISupplierEntityService supplierEntityService;
 
+
     @RequestMapping("/home")
     public String home(HttpServletRequest request,String mobile){
-
         int supplierId = supplierEntityService.getSupplierByMobile(mobile);
         if (supplierId==0){
             return "";
         }
         HttpSession session = request.getSession();
         session.setAttribute("supplierId", supplierId);
-
         return "home";
     }
     @RequestMapping("/homes")
     public String homes(){
         return "home";
     }
-    @RequestMapping("/second")
-    public String secondHtml(){
-        return "Second";
-    }
+
+
 
 }

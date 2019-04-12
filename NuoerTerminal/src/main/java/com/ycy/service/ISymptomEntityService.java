@@ -6,11 +6,13 @@ import com.ycy.entity.SymptomEntity;
 
 public interface ISymptomEntityService extends IService<SymptomEntity> {
 
-     /**
-     * 获取所有症状类型并分页
-     * @param page 分页
+
+    /**
+     * 模糊查询症状并分页(也可以查询所有症状)
+     * @param page
+     * @param name
      * @return
      */
-    Page<SymptomEntity> getListOfSymptom(Page<SymptomEntity> page);
+    public Page<SymptomEntity> getSymptomByLike(Page<SymptomEntity> page,String name,int supplierId);
 
 }

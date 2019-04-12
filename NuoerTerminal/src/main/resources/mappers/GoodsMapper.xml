@@ -10,7 +10,6 @@
     <result column="bar_code" jdbcType="VARCHAR" property="bar_code" />
     <result column="goods_name" jdbcType="VARCHAR" property="goods_name" />
     <result column="goods_number" jdbcType="INTEGER" property="goods_number" />
-    <result column="goods_weight" jdbcType="VARCHAR" property="goods_weight" />
     <result column="shop_price" jdbcType="VARCHAR" property="shop_price" />
     <result column="goods_brief" jdbcType="VARCHAR" property="goods_brief" />
     <result column="goods_img" jdbcType="VARCHAR" property="goods_img" />
@@ -19,23 +18,45 @@
     <result column="goods_attr" jdbcType="VARCHAR" property="goods_attr" />
     <result column="license_number" jdbcType="VARCHAR" property="license_number" />
   </resultMap>
-    <sql id="Base_Column_List">
-    goods_id, symptom_id, supplier_id, brand_id,goods_sn,bar_code,goods_name,goods_number,goods_weight,shop_price,goods_brief,goods_img,common_name,
+    <sql id="GoodsEntity_Column_List">
+    goods_id, symptom_id, supplier_id, brand_id,goods_sn,bar_code,goods_name,goods_number,shop_price,goods_brief,goods_img,common_name,
     manufacturer,goods_attr,license_number
   </sql>
 
-  <select id="getGoodsByBarCode"   resultType="com.ycy.entity.GoodsEntity">
-    select 
-    <include refid="Base_Column_List" />
-    from goods
-    where bar_code = #{barcode} and supplier_id= #{supplierId}
+  <select id="getLocalGoodsByBarCode"   resultType="com.ycy.vo.GoodsVO">
+    select
+    g.*,brand_name,symptom_name
+    from noer_goods g
+    LEFT JOIN noer_brand b on g.brand_id=b.brand_id
+    left JOIN noer_symptom s on s.symptom_id=g.symptom_id
+    where bar_code = #{barcode} and supplier_id = #{supplierId}
   </select>
 
-  <select id="getGoodsById"   resultType="com.ycy.entity.GoodsEntity">
+  <select id="getOnlineGoodsByBarCode"   resultType="com.ycy.vo.GoodsVO">
     select
-    <include refid="Base_Column_List" />
-    from goods
-    where goods_id = #{goodsId} and supplier_id= #{supplierId}
+    g.*,brand_name,symptom_name
+    from noer_goods g
+    LEFT JOIN noer_brand b on g.brand_id=b.brand_id
+    left JOIN noer_symptom s on s.symptom_id=g.symptom_id
+    where bar_code = #{barcode}
   </select>
+
+  <select id="getGoodsByIdToVo"   resultType="com.ycy.vo.GoodsVO">
+    select
+    g.*,brand_name,symptom_name
+    from noer_goods g
+    LEFT JOIN noer_brand b on g.brand_id=b.brand_id
+    left JOIN noer_symptom s on s.symptom_id=g.symptom_id
+    where goods_id = #{goodsId}
+  </select>
+
+  <select id="getGoodsByIdToEntity"   resultType="com.ycy.entity.GoodsEntity">
+    select
+    <include refid="GoodsEntity_Column_List" />
+    from noer_goods
+    where goods_id = #{goodsId}
+  </select>
+
+
 
 </mapper>

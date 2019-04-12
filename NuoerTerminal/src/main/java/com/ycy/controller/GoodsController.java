@@ -2,9 +2,8 @@ package com.ycy.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.ycy.entity.GoodsEntity;
-import com.ycy.entity.SymptomEntity;
 import com.ycy.service.IGoodsEntityService;
-import com.ycy.service.ISymptomEntityService;
+import com.ycy.vo.GoodsVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,21 +17,20 @@ import javax.servlet.http.HttpServletRequest;
 public class GoodsController {
     @Autowired
     private IGoodsEntityService goodsEntityService;
-    @Autowired
-    private ISymptomEntityService symptomEntityService;
+
 
     /**
-     * 查询某个店铺某个症状下的所有商品并分页
+     * 模糊查询某个店铺某个症状下的所有商品并分页
      * @param pageNo
      * @param pageSize
      * @param symptomId
      * @return
      */
-    @RequestMapping("/getGoodsBySymptom")
+    @RequestMapping("/getLocalGoodsBySymptomLikeName")
     @ResponseBody
-    public Page<GoodsEntity> getGoodsBySymptom(int pageNo, int pageSize, int symptomId, HttpServletRequest request) {
+    public Page<GoodsEntity> getLocalGoodsBySymptomLikeName(int pageNo, int pageSize, int symptomId,String name, HttpServletRequest request) {
         Page<GoodsEntity> page = new Page<>(pageNo,pageSize);
-        Page<GoodsEntity> goodsPage = goodsEntityService.getAllBySymptom(page,symptomId,(int)request.getSession().getAttribute("supplierId"));
+        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsBySymptomLikeName(page,symptomId,name,(int)request.getSession(false).getAttribute("supplierId"));
         return goodsPage;
     }
 
@@ -43,70 +41,123 @@ public class GoodsController {
      * @param brandId
      * @return
      */
-    @RequestMapping("/getGoodsByBrand")
+    @RequestMapping("/getLocalGoodsByBrandLikeName")
     @ResponseBody
-    public Page<GoodsEntity> getGoodsByBrand(int pageNo,int pageSize,int brandId, HttpServletRequest request) {
+    public Page<GoodsEntity> getLocalGoodsByBrandLikeName(int pageNo,int pageSize,int brandId,String name, HttpServletRequest request) {
         Page<GoodsEntity> page = new Page<>(pageNo,pageSize);
-        Page<GoodsEntity> goodsPage = goodsEntityService.getAllByBrand(page,brandId,(int)request.getSession().getAttribute("supplierId"));
+        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByBrandLikeName(page,brandId,name,(int)request.getSession(false).getAttribute("supplierId"));
         return goodsPage;
     }
 
     /**
-     * 得到所有症状并分页
-     * @param pageNo
-     * @param pageSize
-     * @return
-     */
-    @RequestMapping("/getAllSymptom")
-    @ResponseBody
-    public Page<SymptomEntity> getAllSymptom(int pageNo, int pageSize) {
-        Page<SymptomEntity> page = new Page<>(pageNo,pageSize);
-        Page<SymptomEntity> goodsPage = symptomEntityService.getListOfSymptom(page);
-        return goodsPage;
-    }
-
-    /**
-     * 根据药品名模糊查询并分页
+     * 根据药品名模糊查询该店药品并分页
      * @param pageNo
      * @param pageSize
      * @param name
      * @param request
      * @return
      */
-    @RequestMapping("/getGoodsByName")
+    @RequestMapping("/getLocalGoodsByName")
     @ResponseBody
-    public Page<GoodsEntity> getAllSymptom(int pageNo, int pageSize,String name, HttpServletRequest request) {
+    public Page<GoodsEntity> getLocalGoodsByName(int pageNo, int pageSize,String name, HttpServletRequest request) {
         Page<GoodsEntity> page = new Page<>(pageNo,pageSize);
-        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByName(page,name,(int)request.getSession().getAttribute("supplierId"));
+        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByName(page,name,(int)request.getSession(false).getAttribute("supplierId"));
         return goodsPage;
     }
 
     /**
-     * 根据药品条形码查询药品（唯一）
-     * @param barcode
+     * 根据药品条形码查询该店药品（唯一）
+     * @param barCode
      * @param request
      * @return
      */
-    @RequestMapping("/getGoodsByBarCode")
+    @RequestMapping("/getLocalGoodsByBarCode")
     @ResponseBody
-    public GoodsEntity getGoodsByBarCode(String barcode,HttpServletRequest request){
+    public GoodsVO getLocalGoodsByBarCode(String barCode,HttpServletRequest request){
 
-        GoodsEntity goodsEntity = goodsEntityService.getGoodsByBarCode(barcode,(int)request.getSession().getAttribute("supplierId"));
+        GoodsVO goodsEntity = goodsEntityService.getGoodsByBarCode(barCode,(int)request.getSession(false).getAttribute("supplierId"));
         return goodsEntity;
     }
 
     /**
-     * 通过id获取该店铺某个商品
+     * 通过id获取某个商品详情
      * @param goodsId
      * @param request
      * @return
      */
-    @RequestMapping("/getGoodsById")
+    @RequestMapping("/getGoodsByIdToVo")
     @ResponseBody
-    public GoodsEntity getGoodsById(int goodsId,HttpServletRequest request){
+    public GoodsVO getGoodsByIdToVo(int goodsId, HttpServletRequest request){
 
-        GoodsEntity goodsEntity = goodsEntityService.getGoodsById(goodsId,(int)request.getSession().getAttribute("supplierId"));
+        GoodsVO goodsEntity = goodsEntityService.getGoodsByIdToVo(goodsId);
         return goodsEntity;
     }
 
+    @RequestMapping("/getGoodsByIdToEntity")
+    @ResponseBody
+    public GoodsEntity getGoodsByIdToEntity(int goodsId, HttpServletRequest request){
+
+        GoodsEntity goodsEntity = goodsEntityService.getGoodsByIdToEntity(goodsId);
+        return goodsEntity;
+    }
+
+
+    /**
+     *查询所有店铺某个品牌下的所有商品并分页
+     * @param pageNo
+     * @param pageSize
+     * @param brandId
+     * @return
+     */
+    @RequestMapping("/getOnlineGoodsByBrandLikeName")
+    @ResponseBody
+    public Page<GoodsEntity> getGoodsByBrand(int pageNo,int pageSize,int brandId,String name, HttpServletRequest request) {
+        Page<GoodsEntity> page = new Page<>(pageNo,pageSize);
+        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByBrandLikeName(page,brandId,name,61);
+        return goodsPage;
+    }
+    /**
+     * 模糊查询所有店铺某个症状下的所有商品并分页
+     * @param pageNo
+     * @param pageSize
+     * @param symptomId
+     * @return
+     */
+    @RequestMapping("/getOnlineGoodsBySymptomLikeName")
+    @ResponseBody
+    public Page<GoodsEntity> getOnlineGoodsBySymptomLikeName(int pageNo, int pageSize, int symptomId,String name, HttpServletRequest request) {
+        Page<GoodsEntity> page = new Page<>(pageNo,pageSize);
+        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsBySymptomLikeName(page,symptomId,name,61);
+        return goodsPage;
+    }
+
+    /**
+     * 根据药品名模糊查询所有店药品并分页
+     * @param pageNo
+     * @param pageSize
+     * @param name
+     * @param request
+     * @return
+     */
+    @RequestMapping("/getOnlineGoodsByName")
+    @ResponseBody
+    public Page<GoodsEntity> getOnlineGoodsByName(int pageNo, int pageSize,String name, HttpServletRequest request) {
+        Page<GoodsEntity> page = new Page<>(pageNo,pageSize);
+        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByName(page,name,61);
+        return goodsPage;
+    }
+
+    /**
+     * 根据药品条形码查询所有店铺药品（唯一）
+     * @param barCode
+     * @param request
+     * @return
+     */
+    @RequestMapping("/getOnlineGoodsByBarCode")
+    @ResponseBody
+    public GoodsVO getOnlineGoodsByBarCode(String barCode,HttpServletRequest request){
+
+        GoodsVO goodsEntity = goodsEntityService.getGoodsByBarCode(barCode,61);
+        return goodsEntity;
+    }
 }

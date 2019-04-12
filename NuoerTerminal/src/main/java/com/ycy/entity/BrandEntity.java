@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * 品牌
  */
-@TableName("brand")
+@TableName("noer_brand")
 public class BrandEntity implements Serializable {
 
     private static final long serialVersionUID = -5557866221388241633L;

@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * 商品
  */
-@TableName("goods")
+@TableName("noer_goods")
 public class GoodsEntity implements Serializable {
 
     private static final long serialVersionUID = -5592750933100318863L;
@@ -20,7 +20,6 @@ public class GoodsEntity implements Serializable {
     private String bar_code;//条形码
     private String goods_name;//商品名称
     private int goods_number;//库存
-    private String goods_weight;//商品重量
     private String shop_price;//商品价格
     private String goods_brief;//商品简单描述
     private String goods_img;//商品图片
@@ -91,14 +90,6 @@ public class GoodsEntity implements Serializable {
 
     public void setGoods_number(int goods_number) {
         this.goods_number = goods_number;
-    }
-
-    public String getGoods_weight() {
-        return goods_weight;
-    }
-
-    public void setGoods_weight(String goods_weight) {
-        this.goods_weight = goods_weight;
     }
 
     public String getShop_price() {

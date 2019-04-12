@@ -2,45 +2,103 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7fd28b1-ad87-4a06-9f5c-c434add0f8f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/entity/OrderEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/mapper/BrandMaapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/IBrandEntityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/impl/BrandEntityServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TerminalData_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_beanutils_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TerminalData.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ycy/entity/BrandEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ycy/entity/GoodsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ycy/entity/SupplierEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ycy/entity/SymptomEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ycy/util/DBUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ycy/util/DateOfString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ycy/util/GetAndPost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ycy/util/ReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/configuration.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-beanutils-1.7.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-collections-3.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-io-2.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-lang-2.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-logging-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/ezmorph-1.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/fastjson-1.2.34.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpclient-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpcore-4.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/httpmime-4.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/json-lib-2.4-jdk15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/sqljdbc4-2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/controller/BrandController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/controller/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/controller/SymptomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/entity/OrderGoodsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/util/RandomData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/vo/GoodsVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/Error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalBrandGoods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalBrandQuery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalCart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalDrugNameQuiry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalDurgNameGoods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalGoodsDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalScanCodeGoods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalScanCodeQuery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalSecond.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalSymptomGoods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/LocalSymptomquery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineAddressInfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineBrandGoods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineBrandQuery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineCart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineDrugNameQuiry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineDurgNameGoods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineGoodsDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlinePayment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineScanCodeGoods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineScanCodeQuery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineSecond.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineSymptomGoods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/OnlineSymptomquery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/img/404.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/img/LOGO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/img/jzjt_15541014961553.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/area.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/css/flat_gray/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/css/flat_gray/button_set.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/css/flat_gray/keyboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/extensions/e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/extensions/scriptqueue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/jquery-1.8.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/chinese-pynsimpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/d/CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/d/ET.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/d/IKU.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/d/IPA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/d/JP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/d/KR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/d/LA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/layouts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/layouts/us.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/virtualkeyboard.full.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/virtualkeyboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/js/vk_loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ycy/dao/GoodsEntityDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ycy/dao/impl/GoodsEntityDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ycy/http/AutoRun.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ycy/http/HttpData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ycy/service/IGoodsEntityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ycy/service/impl/GoodsEntityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/entity/GoodsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/entity/GoodsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/entity/SymptomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/entity/SymptomEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/entity/UserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/mapper/GoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/mapper/GoodsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/IBrandEntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/IBrandEntityService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/IGoodsEntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/IGoodsEntityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/ISymptomEntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/ISymptomEntityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/impl/BrandEntityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/impl/BrandEntityServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/impl/GoodsEntityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/impl/GoodsEntityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/impl/SymptomEntityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/java/com/ycy/service/impl/SymptomEntityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/mappers/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/mappers/GoodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/Branddetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/Branddetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/css/purchase.css" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/static/css/purchase.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/Brand.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/Branddetails.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/Details .html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/Druginquiry.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/Payment .html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/Second.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/Symptomquery.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/information.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/scanning.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NuoerTerminal/src/main/resources/templetes/sp_cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TerminalData.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TerminalData.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ycy/entity/GoodsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ycy/entity/GoodsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ycy/entity/SymptomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ycy/entity/SymptomEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ycy/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ycy/util/DBUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ycy/util/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ycy/util/ReadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,52 +111,101 @@
     <session id="-495263308">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="11" />
+          <entry key="java" value="33" />
           <entry key="properties" value="1" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="33" />
           <entry key="Properties" value="1" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="11" />
+          <entry key="java" value="4378" />
           <entry key="properties" value="20" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="4376" />
           <entry key="Properties" value="20" />
+          <entry key="SQL" value="2" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ycy/util/DBUtil.java">
+        <entry file="file://$PROJECT_DIR$/src/com/ycy/util/ReadFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="1377">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/GoodsEntity.java">
+        <entry file="file://$PROJECT_DIR$/src/com/ycy/service/impl/GoodsEntityServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="214">
+              <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/ycy/dao/impl/GoodsEntityDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1024">
+              <caret line="50" column="70" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ycy/dao/GoodsEntityDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ycy/util/DBUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="891">
+              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -106,17 +213,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/SymptomEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/BrandEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -124,49 +222,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/SupplierEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="268">
+              <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ycy/util/GetAndPost.java">
+        <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/GoodsEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/ycy/util/ReadFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ycy/util/DateOfString.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="429">
+              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="17" selection-end-column="33" />
+              <folding>
+                <element signature="e#3271#3272#0" expanded="true" />
+                <element signature="e#3302#3303#0" expanded="true" />
+                <element signature="e#3350#3351#0" expanded="true" />
+                <element signature="e#3390#3391#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/configuration.properties">
+        <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/BrandEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+            <state relative-caret-position="380">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -177,10 +270,20 @@
         <option value="$PROJECT_DIR$/src/com/ycy/util/DateOfString.java" />
         <option value="$PROJECT_DIR$/src/com/ycy/entity/SupplierEntity.java" />
         <option value="$PROJECT_DIR$/src/com/ycy/entity/BrandEntity.java" />
-        <option value="$PROJECT_DIR$/src/com/ycy/entity/SymptomEntity.java" />
-        <option value="$PROJECT_DIR$/src/com/ycy/entity/GoodsEntity.java" />
         <option value="$PROJECT_DIR$/src/configuration.properties" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/com/ycy/service/IGoodsEntityService.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/service/impl/GoodsEntityServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/http/AutoRun.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/http/HttpData.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/entity/TwoSymptomEntity.java" />
         <option value="$PROJECT_DIR$/src/com/ycy/util/ReadFile.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/util/DBUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/dao/GoodsEntityDao.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/entity/GoodsEntity.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/dao/impl/GoodsEntityDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/entity/ThreeSymptomEntity.java" />
+        <option value="$PROJECT_DIR$/src/com/ycy/entity/SymptomEntity.java" />
       </list>
     </option>
   </component>
@@ -205,12 +308,16 @@
     <option name="width" value="1400" />
     <option name="height" value="987" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,7 +341,44 @@
               <item name="TerminalData" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ycy" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TerminalData" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TerminalData" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ycy" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TerminalData" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TerminalData" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ycy" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TerminalData" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TerminalData" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ycy" type="462c0819:PsiDirectoryNode" />
+              <item name="http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TerminalData" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TerminalData" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ycy" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TerminalData" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TerminalData" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ycy" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TerminalData" type="b2602c69:ProjectViewProjectNode" />
@@ -254,35 +398,32 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TerminalData" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TerminalData" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553050810807" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/sqljdbc4-2.0.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554339602750" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/KYJToApi" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ycy.service.impl" />
+      <recent name="com.ycy.service" />
+      <recent name="com.ycy.dao.impl" />
+      <recent name="com.ycy.dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\IntelliJ IDEA 2018.2.1\Terminal\TerminalData\src\com\ycy\entity" />
       <recent name="E:\IntelliJ IDEA 2018.2.1\Terminal\TerminalData\src" />
@@ -312,30 +453,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553050127604</updated>
-      <workItem from="1553050131115" duration="650000" />
+      <workItem from="1553050131115" duration="28684000" />
+      <workItem from="1553483832148" duration="3168000" />
+      <workItem from="1553492952409" duration="5822000" />
+      <workItem from="1553580853521" duration="584000" />
+      <workItem from="1554270815300" duration="5343000" />
+      <workItem from="1554339769864" duration="864000" />
+      <workItem from="1554340697548" duration="1583000" />
+      <workItem from="1554358392324" duration="594000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="650000" />
+    <option name="totallyTimeSpent" value="46642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Web" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07036247" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -343,15 +485,22 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32899022" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="CheckStyle" order="12" />
+      <window_info anchor="bottom" id="Hybris Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +509,34 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ycy/http/HttpData.java</url>
+          <line>88</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ycy/http/HttpData.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/OrderGoods.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/OrderEntity.java" />
+    <entry file="file://$PROJECT_DIR$/src/configuration.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ycy/util/DateOfString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -375,66 +551,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/OrderGoods.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="189">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/OrderEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/service/IGoodsEntityService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="162">
+          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/http/AutoRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/http/HttpData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#execute1#0;class#HttpData#0" />
+            <element signature="class#execute2#0;class#HttpData#0" />
+            <element signature="class#execute3#0;class#HttpData#0" />
+            <element signature="class#execute4#0;class#HttpData#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/TwoSymptomEntity.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/ThreeSymptomEntity.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/util/ReadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/service/impl/GoodsEntityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/dao/GoodsEntityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ycy/util/DBUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/GoodsEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/SupplierEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="891">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/SymptomEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="378">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/SupplierEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/GoodsEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <element signature="e#3271#3272#0" expanded="true" />
+            <element signature="e#3302#3303#0" expanded="true" />
+            <element signature="e#3350#3351#0" expanded="true" />
+            <element signature="e#3390#3391#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ycy/entity/BrandEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="380">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/configuration.properties">
+    <entry file="file://$PROJECT_DIR$/src/com/ycy/dao/impl/GoodsEntityDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ycy/util/ReadFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="1024">
+          <caret line="50" column="70" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

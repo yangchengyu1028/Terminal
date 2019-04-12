@@ -7,10 +7,12 @@ import java.sql.*;
  */
 public class DBUtil {
     private static final String DRIVER = ReadFile.getDRIVER();
-    private static final String URL = ReadFile.getURL();
-    private static final String USER = ReadFile.getUSER();
-    private static final String PASSWORD = ReadFile.getPASSWORD();
-
+    private static final String URL1 = ReadFile.getURL1();
+    private static final String USER1 = ReadFile.getUSER1();
+    private static final String PASSWORD1 = ReadFile.getPASSWORD1();
+    private static final String URL2 = ReadFile.getURL2();
+    private static final String USER2 = ReadFile.getUSER2();
+    private static final String PASSWORD2 = ReadFile.getPASSWORD2();
 
     static{
         try {
@@ -21,10 +23,21 @@ public class DBUtil {
         }
     }
 
-    public static Connection getConn(){
+    public static Connection getConn1(){
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            conn = DriverManager.getConnection(URL1, USER1, PASSWORD1);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return conn;
+    }
+
+    public static Connection getConn2(){
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL2, USER2, PASSWORD2);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

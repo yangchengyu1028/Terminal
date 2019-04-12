@@ -10,5 +10,5 @@ public interface IBrandEntityService extends IService<BrandEntity> {
      * @param page
      * @return
      */
-    Page<BrandEntity> getAllBrand(Page<BrandEntity> page);
+    Page<BrandEntity> getBrandByLike(Page<BrandEntity> page,String name);
 }

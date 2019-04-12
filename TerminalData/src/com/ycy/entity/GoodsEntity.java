@@ -18,7 +18,6 @@ public class GoodsEntity implements Serializable {
     private String bar_code;//条形码
     private String goods_name;//商品名称
     private int goods_number;//库存
-    private String goods_weight;//商品重量
     private String shop_price;//商品价格
     private String goods_brief;//商品简单描述
     private String goods_img;//商品图片
@@ -26,6 +25,7 @@ public class GoodsEntity implements Serializable {
     private String manufacturer;//生产厂家
     private String goods_attr;//规格
     private String license_number;//批准文号
+    private String first_py;//首拼
 
     public int getGoods_id() {
         return goods_id;
@@ -91,14 +91,6 @@ public class GoodsEntity implements Serializable {
         this.goods_number = goods_number;
     }
 
-    public String getGoods_weight() {
-        return goods_weight;
-    }
-
-    public void setGoods_weight(String goods_weight) {
-        this.goods_weight = goods_weight;
-    }
-
     public String getShop_price() {
         return shop_price;
     }
@@ -155,4 +147,11 @@ public class GoodsEntity implements Serializable {
         this.license_number = license_number;
     }
 
+    public String getFirst_py() {
+        return first_py;
+    }
+
+    public void setFirst_py(String first_py) {
+        this.first_py = first_py;
+    }
 }

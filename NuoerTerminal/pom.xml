@@ -70,12 +70,18 @@
             <artifactId>commons-pool2</artifactId>
         </dependency>
 
-        <!-- jstl标签 -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
+        <!-- 跳转jsp页面必备jar包 -->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.tomcat.embed</groupId>-->
+            <!--<artifactId>tomcat-embed-jasper</artifactId>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet</groupId>-->
+            <!--<artifactId>jstl</artifactId>-->
+        <!--</dependency>-->
 
+        <!-- 数据库连接 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -137,6 +143,21 @@
             <artifactId>xmlunit-core</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
+        </dependency>
+
+        <!--百度语音api -->
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>java-sdk</artifactId>
+            <version>4.11.0</version>
+        </dependency>
+
+        <!-- 热部署-->
+        <dependency>
+            　　<groupId>org.springframework.boot</groupId>
+            　　<artifactId>spring-boot-devtools</artifactId>
+            　　<!-- optional=true, 依赖不会传递, 该项目依赖devtools; 之后依赖boot项目的项目如果想要使用devtools, 需要重新引入 -->
+            　　<optional>true</optional>
         </dependency>
 
     </dependencies>

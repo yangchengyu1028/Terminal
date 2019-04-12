@@ -12,11 +12,12 @@ import java.util.Properties;
 public final class ReadFile { 
 	
     private   static  String DRIVER; 
-    private   static  String URL; 
-    private   static  String USER;
-    private   static  String PASSWORD;
-    private   static  String app_key;
-
+    private   static  String URL1;
+    private   static  String USER1;
+    private   static  String PASSWORD1;
+    private   static  String URL2;
+    private   static  String USER2;
+    private   static  String PASSWORD2;
 
 
     static  {  
@@ -25,10 +26,12 @@ public final class ReadFile {
         try  {  
            prop.load(in);  
            DRIVER = prop.getProperty( "DRIVER" ).trim(); 
-           URL = prop.getProperty( "URL" ).trim();
-           USER = prop.getProperty( "USER" ).trim();
-           PASSWORD = prop.getProperty( "PASSWORD" ).trim();
-            app_key = prop.getProperty( "app_key" ).trim();
+           URL1 = prop.getProperty( "URL1" ).trim();
+           USER1 = prop.getProperty( "USER1" ).trim();
+           PASSWORD1 = prop.getProperty( "PASSWORD1" ).trim();
+            URL2 = prop.getProperty( "URL2" ).trim();
+            USER2 = prop.getProperty( "USER2" ).trim();
+            PASSWORD2 = prop.getProperty( "PASSWORD2" ).trim();
        }  catch  (IOException e) {
            e.printStackTrace();  
        }  
@@ -38,32 +41,35 @@ public final class ReadFile {
     private ReadFile() {
    }  
 
-    public   static  String getApp_key() {
-        return  app_key;
-   }
 
 	public static String getDRIVER() {
 		return DRIVER;
 	}
 
-	public static String getURL() {
-		return URL;
+	public static String getURL1() {
+		return URL1;
 	}
 
 
-	public static String getUSER() {
-		return USER;
+	public static String getUSER1() {
+		return USER1;
 	}
 
 
-	public static String getPASSWORD() {
-		return PASSWORD;
+	public static String getPASSWORD1() {
+		return PASSWORD1;
 	}
 
 
+    public static String getURL2() {
+        return URL2;
+    }
 
+    public static String getUSER2() {
+        return USER2;
+    }
 
-
-
-
+    public static String getPASSWORD2() {
+        return PASSWORD2;
+    }
 }

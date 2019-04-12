@@ -13,7 +13,7 @@
     <select id="getByMobile" parameterType="java.lang.String"  resultType="com.ycy.entity.SupplierEntity">
         select
         <include refid="Base_Column_List" />
-        from supplier
+        from noer_supplier
         where mobile = ${mobile}
     </select>
 

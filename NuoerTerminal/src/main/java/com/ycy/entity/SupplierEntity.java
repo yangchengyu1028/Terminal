@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 店铺
  */
-@TableName("supplier")
+@TableName("noer_supplier")
 public class SupplierEntity implements Serializable {
 
     private static final long serialVersionUID = 3942052857362546301L;
