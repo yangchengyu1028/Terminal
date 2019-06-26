@@ -47,9 +47,9 @@ public class GoodsEntityServiceImpl extends ServiceImpl<GoodsMapper, GoodsEntity
         return page;
     }
 
-    public Page<GoodsEntity> getGoodsByBrandLikeName(Page<GoodsEntity> page,Integer brandId,String name,Integer supplierId){
+    public Page<GoodsEntity> getGoodsByBrandLikeName(Page<GoodsEntity> page,String brand_name,String name,Integer supplierId){
         // 从缓存中获取该品牌所有药品
-        String key = "goods_brand_" + brandId +"_name_like_"+ name + "_page_" + page.getCurrent()+ "_pageSize_" + page.getSize()+"_supplierId_" + supplierId;
+        String key = "goods_brand_" + brand_name +"_name_like_"+ name + "_page_" + page.getCurrent()+ "_pageSize_" + page.getSize()+"_supplierId_" + supplierId;
         ValueOperations<String, Page<GoodsEntity>> operations = redisTemplate.opsForValue();
         // 缓存存在
         boolean hasKey = redisTemplate.hasKey(key);
@@ -58,10 +58,10 @@ public class GoodsEntityServiceImpl extends ServiceImpl<GoodsMapper, GoodsEntity
         }
         if (isChineseOrEnglish.isEnglish(name)){
             // 从 DB 中获取该品牌所有药品信息
-            page.setRecords(goodsMapper.selectPage(page,new EntityWrapper<GoodsEntity>().eq("brand_id",brandId).eq("supplier_id",supplierId).like("first_py",name)));
+            page.setRecords(goodsMapper.selectPage(page,new EntityWrapper<GoodsEntity>().eq("brand_name",brand_name).eq("supplier_id",supplierId).like("first_py",name)));
         }else {
             // 从 DB 中获取该品牌所有药品信息
-            page.setRecords(goodsMapper.selectPage(page,new EntityWrapper<GoodsEntity>().eq("brand_id",brandId).eq("supplier_id",supplierId).like("goods_name",name)));
+            page.setRecords(goodsMapper.selectPage(page,new EntityWrapper<GoodsEntity>().eq("brand_name",brand_name).eq("supplier_id",supplierId).like("goods_name",name)));
         }
         // 设置缓存时间，插入缓存
         operations.set(key, page, randomData.getRandom(20,50)*60*60, TimeUnit.SECONDS);

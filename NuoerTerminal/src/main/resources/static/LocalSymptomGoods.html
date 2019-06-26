@@ -14,7 +14,7 @@
 		<!--头部标题-->
 		<div id="head">
 			<div id="main">
-				<a href="LocalSymptomquery.html">
+				<a href="javascript:void(0);" onclick="goBack()">
 					<div class="left">
 						<li class="" style="margin-right: 16px;"><img src="img/tp_fh.png" style="width: 0.25rem;"/></li>
 						<li class="" ><h2>返回上一级</h2></li>
@@ -101,7 +101,10 @@
             var inputVal = $("#queryGoods").val();
             showGoodsBySymptom();
             getCart();
-
+            //返回上一页
+            function goBack() {
+                window.history.back();
+            }
             function getUrlParam(name){
                 // 用该属性获取页面 URL 地址从问号 (?) 开始的 URL（查询部分）
                 var url = window.location.search;
@@ -114,10 +117,10 @@
             }
 
             <!--弹出软键盘-->
-            function showKeyboard(){
-                VirtualKeyboard.toggle('queryGoods', 'softkey');
-                $("#kb_langselector,#kb_mappingselector,#copyrights").css("display", "none");
-            }
+            // function showKeyboard(){
+            //     VirtualKeyboard.toggle('queryGoods', 'softkey');
+            //     $("#kb_langselector,#kb_mappingselector,#copyrights").css("display", "none");
+            // }
 
             <!--加载该症状症状商品并分页(可模糊查询) -->
             function showGoodsBySymptom() {
@@ -137,8 +140,10 @@
                         for (var i=0;i<page.records.length;i++){
                             str += "<a style='height: 50%' href='LocalGoodsDetails.html?id="
                                 + page.records[i].goods_id
-                                +"'><div class='Mid-b'><div class='brand_block_Middle_tp'><div class='box-02'><img src='img/03d81a83aad15337c7eca09bc32b67185b9c29251724c-ZfZhLQ_fw658拷贝10.png'></div><div class='g-f'><div class='g-f0 u-left'><h3 style='font-size: 0.104rem;color: black'>"
-								+ page.records[i].goods_name
+                                +"'><div class='Mid-b'><div class='brand_block_Middle_tp'><div class='box-02'><img style='width: 50%;height: 50%' src='"
+                                + page.records[i].goods_img
+                                +"'></div><div class='g-f'><div class='g-f0 u-left'><h3 style='font-size: 0.104rem;color: black'>"
+                                + page.records[i].goods_name
                                 +"</h3></div><div class='g-f1'><div class='u-right'><p style='font-size: 0.125rem;color: red;'>"
 								+ page.records[i].shop_price
                                 +"</p></div><div class='u-left'><p>生产厂家："

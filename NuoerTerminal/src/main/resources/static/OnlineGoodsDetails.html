@@ -45,7 +45,7 @@
 					<div class="Details_block">
 						<div class="Details_block_left">
 							<div class="Details_block_left_img">
-								<img id="goodsImg" style="width: 100%; height: auto;" src="img/03d81a83aad15337c7eca09bc32b67185b9c29251724c-ZfZhLQ_fw658拷贝10.png"/>
+								<img id="goodsImg" style="width: 100%; height: 100%;" src=""/>
 							</div>
 						</div>
 						<div class="Division">
@@ -53,35 +53,35 @@
 						</div>
 						<div class="Details_block_right">
 							<div style="position: relative;top: 0.104rem;">
-								<h1 id="goodsName" style="font-size: 0.187rem;font-weight: bold;color: #0086CC;">碱式碳酸药片</h1>
-								<h3 class="manufacturer" style="font-size: 0.083rem;">成都拜欧药业股份有限公司</h3>
+								<h1 id="goodsName" style="font-size: 0.187rem;font-weight: bold;color: #0086CC;"></h1>
+								<h3 class="manufacturer" style="font-size: 0.083rem;"></h3>
 								<hr style="margin-top: 0.083rem;"/>
 							</div>
 							<div>
 								<div class="Details_block_right_clause">
 									<ul>
 										<li>价格</li>
-										<li id="shop_price" class="array">￥25.5</li>
+										<li id="shop_price" class="array"></li>
 									</ul>
 									<ul>
 										<li>生产厂家</li>
-										<li class="array manufacturer">成都拜欧药业股份有限公司</li>
+										<li class="array manufacturer"></li>
 									</ul>
 									<ul>
 										<li>规格</li>
-										<li id="goods_attr" class="array">3.7g*20瓶</li>
+										<li id="goods_attr" class="array"></li>
 									</ul>
 									<ul>
 										<li>批准文号</li>
-										<li id="license_number" class="array">国药准字Z44020610</li>
+										<li id="license_number" class="array"></li>
 									</ul>
 									<ul>
 										<li>条形码</li>
-										<li id="bar_code" class="array">111225212522</li>
+										<li id="bar_code" class="array"></li>
 									</ul>
 									<ul>
 										<li>症状</li>
-										<li id="symptom" class="array">发烧感冒...</li>
+										<li id="symptom" class="array"></li>
 									</ul>
 									<ul>
 										<li>购买数量</li>
@@ -96,7 +96,7 @@
 												<span id="buyNum">1</span>
 											</div>
 										</li>
-										<li class="array" style="left: 1.9rem">库存<span id="goods_number">2000</span>盒</li>
+										<li class="array" style="left: 1.9rem">库存<span id="goods_number"></span>盒</li>
 									</ul>
 									<ul>
 										<li>服务</li>
@@ -163,6 +163,7 @@
                     },
                     async : true,
                     success : function(Goods) {
+                        $("#goodsImg").attr('src',Goods.goods_img);
 						$("#goodsName").text(Goods.goods_name);
                         $(".manufacturer").text(Goods.manufacturer);
                         $("#shop_price").text("￥"+Goods.shop_price);

@@ -13,6 +13,6 @@ public interface ISymptomEntityService extends IService<SymptomEntity> {
      * @param name
      * @return
      */
-    public Page<SymptomEntity> getSymptomByLike(Page<SymptomEntity> page,String name,int supplierId);
+    public Page<SymptomEntity> getSymptomByLike(Page<SymptomEntity> page,String name);
 
 }

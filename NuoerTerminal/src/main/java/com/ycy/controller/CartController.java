@@ -1,8 +1,14 @@
 package com.ycy.controller;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.ycy.entity.GoodsEntity;
 import com.ycy.entity.OrderGoodsEntity;
+import com.ycy.entity.UserEntity;
 import com.ycy.service.IGoodsEntityService;
+import com.ycy.util.GetAndPost;
+import com.ycy.util.QrCodeUtil;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,7 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -18,6 +27,8 @@ import java.util.List;
 public class CartController {
     @Autowired
     private IGoodsEntityService goodsEntityService;
+    private GetAndPost getAndPost = new GetAndPost();
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
     //创建本地店铺购物车
     @RequestMapping("/createLocalCart")
@@ -190,4 +201,39 @@ public class CartController {
         request.getSession(false).setAttribute("OnlineCartList",cartList);
         return "1";
     }
+
+    //跳转支付页面,将用户及订单信息传到易索，并清空购物车
+    @RequestMapping("/payment")
+    public String  payment(HttpServletRequest request) {
+        UserEntity userEntity = (UserEntity) request.getSession(false).getAttribute("userInfo");
+        List<OrderGoodsEntity> cartList = (List<OrderGoodsEntity>) request.getSession(false).getAttribute("OnlineCartList");
+        String token = DigestUtils.md5Hex("yitiji-BD9D07D7-384D-42CD-BD3B-85A3C46AB2DC-" + sdf.format(new Date())).toUpperCase();
+        String url = "http://fservice.iesoo.com/api.php?app_key=BD9D07D7-384D-42CD-BD3B-85A3C46AB2DC&method=dsc.cart_yitiji.insert.post&format=json&mobile_phone=" + userEntity.getMobile() + "&code=" + (new Date()).getTime() + "&token=" + token;
+        JSONArray jsonArray = new JSONArray();
+        JSONObject jsonObject = null;
+        for (int i = 0, j = cartList.size(); i < j; i++) {
+            jsonObject = new JSONObject();
+            jsonObject.put("goods_id", cartList.get(i).getGoods_id());
+            jsonObject.put("goods_number", cartList.get(i).getBuy_number());
+            jsonArray.add(jsonObject);
+        }
+        String str = getAndPost.sendPost(url, "data=" + jsonArray.toJSONString());
+        JSONObject jsonObject1 = JSONObject.parseObject(str);
+        File file = new File("");
+        String path = "";
+        try {
+            path = file.getCanonicalPath();
+        } catch (Exception e) {
+        }
+        String msg = jsonObject1.getString("msg");
+        if (msg.equals("数据提交成功")) {
+
+            String name = QrCodeUtil.getQRCode(jsonObject1.getString("url"), path);
+            //System.out.println(name);
+            return name;
+        }
+        return "0";
+    }
+
+
 }

@@ -11,6 +11,9 @@ public class SymptomEntityServiceImpl  implements ISymptomEntityService {
     private SymptomEntityDao symptomEntityDao = new SymptomEntityDaoImpl();
     @Override
     public void saveOrUpdate(List<SymptomEntity> list) {
+        if (list.isEmpty()){
+            return;
+        }
         symptomEntityDao.saveOrUpdate(list);
     }
 

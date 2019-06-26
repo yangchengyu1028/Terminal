@@ -24,4 +24,6 @@ public class SymptomEntity implements Serializable {
     public void setSymptom_id(int symptom_id) {
         this.symptom_id = symptom_id;
     }
+
+
 }

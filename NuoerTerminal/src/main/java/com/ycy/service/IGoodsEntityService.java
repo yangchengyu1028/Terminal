@@ -25,7 +25,7 @@ public interface IGoodsEntityService extends IService<GoodsEntity> {
      * @param supplierId 店铺id
      * @return
      */
-    Page<GoodsEntity> getGoodsByBrandLikeName(Page<GoodsEntity> page,Integer brandId,String name,Integer supplierId);
+    Page<GoodsEntity> getGoodsByBrandLikeName(Page<GoodsEntity> page,String brand_name,String name,Integer supplierId);
 
     /**
      * 根据药品名模糊查询本店铺药品并分页

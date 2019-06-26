@@ -10,7 +10,6 @@ public class AutoRun implements ServletContextListener {
         HttpData h = new HttpData();
         h.execute();
 
-
     }
     public void contextDestroyed(ServletContextEvent arg0){
     }

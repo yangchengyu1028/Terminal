@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.stereotype.Component;
 
 @SpringBootApplication(scanBasePackages = "com")
-@EnableEurekaClient
+//@EnableEurekaClient
 @MapperScan("com.ycy.mapper")
 @Component("com.ycy.entity")
 public class NuoerTerminalApplication {

@@ -10,4 +10,11 @@ public interface IGoodsEntityService {
      * @param list
      */
     void saveOrUpdate(List<GoodsEntity> list);
+
+    /**
+     * 分页获取伊索商品
+     * @param page
+     * @return
+     */
+    List<GoodsEntity> getListByYS(int num);
 }

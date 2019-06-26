@@ -27,6 +27,8 @@ public class GoodsEntity implements Serializable {
     private String manufacturer;//生产厂家
     private String goods_attr;//规格
     private String license_number;//批准文号
+    private String first_py;//字首字母
+    private String brand_name;//品牌名称
 
     public int getGoods_id() {
         return goods_id;
@@ -148,4 +150,19 @@ public class GoodsEntity implements Serializable {
         this.license_number = license_number;
     }
 
+    public String getFirst_py() {
+        return first_py;
+    }
+
+    public void setFirst_py(String first_py) {
+        this.first_py = first_py;
+    }
+
+    public String getBrand_name() {
+        return brand_name;
+    }
+
+    public void setBrand_name(String brand_name) {
+        this.brand_name = brand_name;
+    }
 }

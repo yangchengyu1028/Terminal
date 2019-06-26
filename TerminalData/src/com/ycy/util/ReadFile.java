@@ -11,7 +11,7 @@ import java.util.Properties;
  */
 public final class ReadFile { 
 	
-    private   static  String DRIVER; 
+    private   static  String DRIVER;
     private   static  String URL1;
     private   static  String USER1;
     private   static  String PASSWORD1;
@@ -25,7 +25,7 @@ public final class ReadFile {
        InputStream in = ReadFile. class.getClassLoader() .getResourceAsStream( "configuration.properties" );
         try  {  
            prop.load(in);  
-           DRIVER = prop.getProperty( "DRIVER" ).trim(); 
+           DRIVER = prop.getProperty( "DRIVER" ).trim();
            URL1 = prop.getProperty( "URL1" ).trim();
            USER1 = prop.getProperty( "USER1" ).trim();
            PASSWORD1 = prop.getProperty( "PASSWORD1" ).trim();
@@ -45,6 +45,7 @@ public final class ReadFile {
 	public static String getDRIVER() {
 		return DRIVER;
 	}
+
 
 	public static String getURL1() {
 		return URL1;

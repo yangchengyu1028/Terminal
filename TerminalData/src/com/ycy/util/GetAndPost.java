@@ -1,6 +1,8 @@
 package com.ycy.util;
 
 import net.sf.json.JSONObject;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -17,6 +19,7 @@ import java.net.URL;
 import java.nio.charset.Charset;
 
 public class GetAndPost {
+    public static Log log = LogFactory.getLog(GetAndPost.class);
     /**
      * 访问接口获取json字符串方法(get)
      * @param addess
@@ -35,6 +38,8 @@ public class GetAndPost {
                 sb.append(str);
             }
         } catch (Exception ex) {
+            log.error("get方法发生异常:"+ex);
+            return null;
         } finally {
             try {
                 if (in != null) {

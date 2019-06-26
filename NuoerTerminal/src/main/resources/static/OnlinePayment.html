@@ -58,7 +58,6 @@
 							<ul class="Payment_title_n">
 								<li id="userName">姓名：河边敲木鱼</li>
 								<li id="mobile">手机号码：18888888888</li>
-								<li id="address">收件地址：四川省成都市锦江区第三人民医院附属楼</li>
 							</ul>
 						</div>
 					</div>
@@ -70,10 +69,6 @@
 								<li style="width: 6px;height: 24px;background-color: #0086CC;"></li>
 								<li style="margin-left: 0.083rem;">商品信息</li>
 								<li class="clear"></li>
-							</ul>
-							<ul class="Payment_xx_tright">
-								<li>配送方式：</li>
-								<li>顺丰快递</li>
 							</ul>
 						</div>
 						<div class="Payment_center">
@@ -97,20 +92,20 @@
 						<table class="Payment_center_Amount">
 								<tr>
 									<td>总商品金额：</td>
-									<td id="totalGoodsPrice">99.99</td>
+									<td id="totalGoodsPrice"></td>
 								</tr>
 								<tr>
 									<td>配送费用：</td>
-									<td>￥7.00</td>
+									<td>￥0.00</td>
 								</tr>
 								<tr>
 									<td>应付金额：</td>
-									<td><b style="color: red;font-size: 24px;" id="totalPrice">￥100.50</b></td>
+									<td><b style="color: red;font-size: 24px;" id="totalPrice"></b></td>
 								</tr>
 							</table>
 							<div>
 								<ul style="float: right;font-size: 24px;position: relative;bottom: 0.42rem;">
-									<input value="点击支付" type="button" class="Button"/>
+									<input id="payment" value="跳转支付" type="button" class="Button"/>
 								</ul>
 							</div>
 					</div>
@@ -160,7 +155,7 @@
                         }
                         $("#showGoods").html(str);
                         $("#totalGoodsPrice").html("￥"+totalPrice.toFixed(2));
-                        $("#totalPrice").html("￥"+(totalPrice+7).toFixed(2));
+                        $("#totalPrice").html("￥"+totalPrice.toFixed(2));
                     }
                 });
             }
@@ -171,13 +166,29 @@
                     data: {},
                     async: true,
                     success: function (userInfo) {
-                        $("#userName").html("姓名："+userInfo.name)
-                        $("#mobile").html("手机号码："+userInfo.mobile)
-                        $("#address").html("收件地址："+userInfo.province+""+userInfo.city+""+userInfo.district+""+userInfo.address);
+                        $("#userName").html("姓名："+userInfo.name);
+                        $("#mobile").html("手机号码："+userInfo.mobile);
                     }
                 });
 				
             }
+            //跳转二维码界面
+            $("#payment").click(function () {
+                $.ajax({
+                    method: "post",
+                    url: "cart/payment",
+                    data: {},
+                    async: true,
+                    success: function (str) {
+						if (str==="0"){
+						    alert("提交错误，请返回重新提交订单！")
+						}else{
+                            window.location.href="Code.html?name="+str;
+						}
+
+                    }
+                })
+            })
 
 
 		</script>

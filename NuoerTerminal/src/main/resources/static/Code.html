@@ -7,15 +7,21 @@
 		<script src="js/index.js"></script>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<style>
+		</style>
+
 	</head>
 	<body>
+
 		<!--头部标题-->
 		<div id="head">
 			<div id="main">
+				<a href="javascript:void(0);" onclick="goBack()">
 					<div class="left">
 						<li class="" style="margin-right: 16px;"><img src="img/tp_fh.png" style="width: 0.25rem;"/></li>
 						<li class="" ><h2>返回上一级</h2></li>
 					</div>
+				</a>
 					<div class="Title">
 						<h1 style="font-size: 0.1rem; position: relative; left: 50%;transform: translate(-15%, 4%);"><span style="font-size:0.3rem;">易索药房网</span>&nbsp;专业医药零售商城</h1>
 					</div>
@@ -51,63 +57,50 @@
 					<hr style="margin-top: 0.5%;"/>
 					<div class="personal">
 						<div class="u-per">
-							<h2>请扫描下方二维码</h4>
-							<div style="width: 1.8rem;height: 1.8rem;background-color: royalblue;"></div>
-							<!--<div class="u-pe1"> 
-								<ul>
-									<li style="font-size: 0.145rem;">收款地址：</li>
-									<div class="info">
-										<div>
-										<select id="s_province" class="personal_block2" name="s_province"></select>&nbsp;
-									    <select id="s_city" class="personal_block2" name="s_city" ></select>&nbsp;
-									    <select id="s_county" class="personal_block2" name="s_county"></select>
-									    <script type="text/javascript" src="js/area.js"></script>
-									    <script type="text/javascript">_init_area();</script>
-									  </div>
-									</div>
-								</ul>
-							</div>
-							<div class="u-pe1"> 
-								<ul>
-									<li style="font-size: 0.145rem;">详细地址：</li>
-									<input class="personal_block"></input>
-								</ul>
-							</div>-->
-							
-							<div class="u-pe1"> 
+							<h2>请扫描下方二维码</h2>
+							<div><img id="show" /></div>
+							<div class="u-pe1">
 								<ul>
 									<li></li>
 									<li style="position: relative; left: 50%;transform: translate(-295%, 40%);">
-										<button class="Button">返回首页</button>
+										<button id="backIndex" class="Button">返回首页</button>
 									</li>
 								</ul>
 							</div>
-							<!--<ul>
-								<li style="font-size: 32px;">收款地址：</li>
-								<input class="personal_block"></input>
-							</ul>
-							<ul>
-								<li style="font-size: 32px;">详细地址：</li>
-								<input class="personal_block"></input>
-							</ul>
-							<ul>
-								<li style="font-size: 32px;">手机号码：</li>
-								<input class="personal_block"></input>
-							</ul>
-							<ul>
-								<li style="font-size: 32px;">验证码：</li>
-								<input class="personal_block1"></input>
-								<li style="position: absolute;right:20%; font-size: 24px;color: #0086CC;">获取验证码</li>						
-							</ul>
-							<ul>
-								<li style="position: relative; left: 50%;transform: translate(-50%, 0%);">
-									<button>确认信息</button>
-								</li>
-							</ul>-->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+	<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+	<script src="js/vk_loader.js?vk_layout=CN%20Chinese%20Simpl.%20Pinyin&vk_skin=flat_gray" type="text/javascript"></script>
+		<script type="text/javascript">
+            //返回上一页
+            function goBack() {
+                window.history.back();
+            }
+            $(function(){
+			//console.log(oneValues());
+			//manyValues();
+                $("#show").attr("src","jpg/"+oneValues());
+                console.log($("#show")[0].src)
+            });
+
+            //接收一个值
+            function oneValues(){
+                var result;
+                var url=window.location.search; //获取url中"?"符后的字串
+                if(url.indexOf("?")!=-1){
+                    result = url.substr(url.indexOf("=")+1);
+                }
+                return result;
+            }
+            $("#backIndex").click(function () {
+				window.location.href="index/backIndex";
+
+            })
+
+	</script>
 	</body>
 </html>

@@ -38,14 +38,14 @@ public class GoodsController {
      *查询某个店铺某个品牌下的所有商品并分页
      * @param pageNo
      * @param pageSize
-     * @param brandId
+     * @param brand_name
      * @return
      */
     @RequestMapping("/getLocalGoodsByBrandLikeName")
     @ResponseBody
-    public Page<GoodsEntity> getLocalGoodsByBrandLikeName(int pageNo,int pageSize,int brandId,String name, HttpServletRequest request) {
+    public Page<GoodsEntity> getLocalGoodsByBrandLikeName(int pageNo,int pageSize,String brand_name,String name, HttpServletRequest request) {
         Page<GoodsEntity> page = new Page<>(pageNo,pageSize);
-        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByBrandLikeName(page,brandId,name,(int)request.getSession(false).getAttribute("supplierId"));
+        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByBrandLikeName(page,brand_name,name,(int)request.getSession(false).getAttribute("supplierId"));
         return goodsPage;
     }
 
@@ -106,14 +106,14 @@ public class GoodsController {
      *查询所有店铺某个品牌下的所有商品并分页
      * @param pageNo
      * @param pageSize
-     * @param brandId
+     * @param brand_name
      * @return
      */
     @RequestMapping("/getOnlineGoodsByBrandLikeName")
     @ResponseBody
-    public Page<GoodsEntity> getGoodsByBrand(int pageNo,int pageSize,int brandId,String name, HttpServletRequest request) {
+    public Page<GoodsEntity> getGoodsByBrand(int pageNo,int pageSize,String brand_name,String name, HttpServletRequest request) {
         Page<GoodsEntity> page = new Page<>(pageNo,pageSize);
-        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByBrandLikeName(page,brandId,name,61);
+        Page<GoodsEntity> goodsPage = goodsEntityService.getGoodsByBrandLikeName(page,brand_name,name,61);
         return goodsPage;
     }
     /**

@@ -3,6 +3,7 @@ package com.ycy.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -24,6 +25,9 @@ public class DruidDBConfig {
         reg.addUrlMappings("/druid/*");
         //reg.addInitParameter("allow", "127.0.0.1"); //白名单
         reg.addInitParameter("resetEnable","false");
+        // 设置登录查看信息的账号密码.
+        reg.addInitParameter("loginUsername", "admin");
+        reg.addInitParameter("loginPassword", "admin");
         return reg;
     }
 
@@ -54,6 +58,7 @@ public class DruidDBConfig {
     public DataSourceTransactionManager transactionManager(){
         return new DataSourceTransactionManager(dataSource());
     }
+
 
 }
 

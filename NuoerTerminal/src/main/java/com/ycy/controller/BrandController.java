@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("brand")
+@RequestMapping("/brand")
 public class BrandController {
 
     @Autowired
@@ -23,7 +23,6 @@ public class BrandController {
      * @return
      */
     @RequestMapping("/getBrandByLike")
-    @ResponseBody
     public Page<BrandEntity> getBrandByLike(int pageNo, int pageSize, String name){
         Page<BrandEntity> page = new Page<>(pageNo,pageSize);
 

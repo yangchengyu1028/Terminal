@@ -24,9 +24,9 @@ public class SymptomEntityServiceImpl extends ServiceImpl<SymptomMapper, Symptom
     private SymptomMapper symptomMapper;
     private RandomData randomData = new RandomData();
 
-    public Page<SymptomEntity> getSymptomByLike(Page<SymptomEntity> page,String name,int supplierId){
+    public Page<SymptomEntity> getSymptomByLike(Page<SymptomEntity> page,String name){
         // 从缓存中获取药品症状
-        String key = "goods_symptom_name_like_"+name+"_page_" + page.getCurrent()+ "_pageSize_" + page.getSize()+"_supplierId_"+supplierId;
+        String key = "goods_symptom_name_like_"+name+"_page_" + page.getCurrent()+ "_pageSize_" + page.getSize();
         ValueOperations<String, Page<SymptomEntity>> operations = redisTemplate.opsForValue();
         // 缓存存在
         boolean hasKey = redisTemplate.hasKey(key);
@@ -34,11 +34,8 @@ public class SymptomEntityServiceImpl extends ServiceImpl<SymptomMapper, Symptom
             return operations.get(key);
         }
         // 从 DB 中获取药品所有症状
-        if ("".equals(name)){
-            page.setRecords(symptomMapper.selectPage(page,new EntityWrapper<SymptomEntity>().eq("supplier_id", supplierId)));
-        }else {
-            page.setRecords(symptomMapper.selectPage(page,new EntityWrapper<SymptomEntity>().like("symptom_name",name).eq("supplier_id", supplierId)));
-        }
+        page.setRecords(symptomMapper.selectPage(page,new EntityWrapper<SymptomEntity>().like("symptom_name",name)));
+
         // 设置缓存时间，插入缓存
         operations.set(key, page, randomData.getRandom(10,20)*24*60*60, TimeUnit.SECONDS);
         return page;

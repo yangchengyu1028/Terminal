@@ -29,7 +29,7 @@ public class SymptomController {
     public Page<SymptomEntity> getLocalSymptomByLike(int pageNo, int pageSize, String name, HttpServletRequest request){
         Page<SymptomEntity> page = new Page<>(pageNo,pageSize);
 
-        return symptomEntityService.getSymptomByLike(page,name,(int)request.getSession(false).getAttribute("supplierId"));
+        return symptomEntityService.getSymptomByLike(page,name);
     }
 
     /**
@@ -44,6 +44,6 @@ public class SymptomController {
     public Page<SymptomEntity> getOnlineSymptomByLike(int pageNo, int pageSize, String name){
         Page<SymptomEntity> page = new Page<>(pageNo,pageSize);
 
-        return symptomEntityService.getSymptomByLike(page,name,61);
+        return symptomEntityService.getSymptomByLike(page,name);
     }
 }

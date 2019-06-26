@@ -16,5 +16,6 @@ public interface GoodsEntityDao {
      * @param page
      * @return
      */
-    List<GoodsEntity> getList(int page);
+    List<GoodsEntity> getListByYS(int num);
+
 }

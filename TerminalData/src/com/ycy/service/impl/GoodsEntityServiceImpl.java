@@ -17,4 +17,10 @@ public class GoodsEntityServiceImpl implements IGoodsEntityService {
         }
         goodsEntityDao.saveOrUpdate(list);
     }
+
+    @Override
+    public List<GoodsEntity> getListByYS(int num) {
+        return goodsEntityDao.getListByYS(num);
+    }
+
 }

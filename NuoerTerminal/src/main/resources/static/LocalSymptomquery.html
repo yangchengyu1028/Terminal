@@ -14,7 +14,7 @@
 		<!--头部标题-->
 		<div id="head">
 			<div id="main">
-				<a href="LocalSecond.html">
+				<a href="javascript:void(0);" onclick="goBack()">
 					<div class="left">
 						<li class="" style="margin-right: 16px;"><img src="img/tp_fh.png" style="width: 0.25rem;"/></li>
 						<li class="" ><h2>返回上一级</h2></li>
@@ -83,11 +83,16 @@
 			var inputVal = $("#querySymptom").val();
 			showSymptom();
 			getCart();
+            //返回上一页
+            function goBack() {
+                window.history.back();
+            }
+
 			<!--弹出软键盘-->
-			function showKeyboard(){
-				VirtualKeyboard.toggle('querySymptom', 'softkey');
-				$("#kb_langselector,#kb_mappingselector,#copyrights").css("display", "none");
-			}
+			// function showKeyboard(){
+			// 	VirtualKeyboard.toggle('querySymptom', 'softkey');
+			// 	$("#kb_langselector,#kb_mappingselector,#copyrights").css("display", "none");
+			// }
 
 			<!--加载所有症状并分页(可模糊查询) -->
 			function showSymptom() {

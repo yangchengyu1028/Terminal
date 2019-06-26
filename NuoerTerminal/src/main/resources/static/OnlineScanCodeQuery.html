@@ -14,7 +14,7 @@
 		<!--头部标题-->
 		<div id="head">
 			<div id="main">
-				<a href="OnlineSecond.html">
+				<a href="javascript:void(0);" onclick="goBack()">
 					<div class="left">
 						<li class="" style="margin-right: 16px;"><img src="img/tp_fh.png" style="width: 0.25rem;"/></li>
 						<li class="" ><h2>返回上一级</h2></li>
@@ -71,11 +71,16 @@
             var inputVal = $("#query").val();
             getCart();
             initScannerModule();
-            <!--弹出软键盘-->
-            function showKeyboard(){
-                VirtualKeyboard.toggle('query', 'softkey');
-                $("#kb_langselector,#kb_mappingselector,#copyrights").css("display", "none");
+
+            //返回上一页
+            function goBack() {
+                window.history.back();
             }
+            <!--弹出软键盘-->
+            // function showKeyboard(){
+            //     VirtualKeyboard.toggle('query', 'softkey');
+            //     $("#kb_langselector,#kb_mappingselector,#copyrights").css("display", "none");
+            // }
             function getCart() {
                 $.ajax({
                     method : "post",

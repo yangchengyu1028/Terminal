@@ -13,7 +13,7 @@
 		<!--头部标题-->
 		<div id="head">
 			<div id="main">
-				<a href="OnlineSecond.html">
+				<a href="javascript:void(0);" onclick="goBack()">
 					<div class="left">
 						<li class="" style="margin-right: 16px;"><img src="img/tp_fh.png" style="width: 0.25rem;"/></li>
 						<li class="" ><h2>返回上一级</h2></li>
@@ -79,11 +79,17 @@
             var inputVal = $("#queryBrand").val();
             showBrand();
             getCart();
-            <!--弹出软键盘-->
-            function showKeyboard(){
-                VirtualKeyboard.toggle('queryBrand', 'softkey');
-                $("#kb_langselector,#kb_mappingselector,#copyrights").css("display", "none");
+            //返回上一页
+            function goBack() {
+                window.history.back();
             }
+
+
+            <!--弹出软键盘-->
+            // function showKeyboard(){
+            //     VirtualKeyboard.toggle('queryBrand', 'softkey');
+            //     $("#kb_langselector,#kb_mappingselector,#copyrights").css("display", "none");
+            // }
 
             <!--加载所有品牌并分页(可模糊查询) -->
             function showBrand() {
@@ -100,11 +106,12 @@
                         var str = "";
                         totalNo = page.pages;
                         for (var i=0;i<page.records.length;i++){
-                            str += "<a style='height: 33.3%' href='OnlineBrandGoods.html?id="
-                                + page.records[i].brand_id
+                            str += "<a style='height: 33.3%' href='OnlineBrandGoods.html?brand_name="
+                                + page.records[i].brand_name
                                 +"'><div class='Mid-b'><div class='Mid-b_Middle_bg'><div>"
-								+ "<img src='img/jzjt_15541014961553.png'>"
-                                +"</div><h3>"
+								+ "<img style='width: 80%;height: 100%;' src='http://iesoo.oss-cn-beijing.aliyuncs.com/data/brandlogo/"
+								+ page.records[i].brand_logo
+								+"'></div><h3>"
                                 + page.records[i].brand_name
                                 +  "</h3>"
                                 +"</div></div></a>"
