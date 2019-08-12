@@ -93,7 +93,7 @@ public class GoodsEntityDaoImpl implements GoodsEntityDao {
         try {
             conn = DBUtil.getConnYS();
             String sql = "select goods_id,cat_id,user_id,brand_id,goods_sn,bar_code,goods_name,goods_number,shop_price,goods_brief,goods_img," +
-                    "common_name,manufacturer,goods_attr,license_number,first_py,brand_name from dsc_goods where lib_goods_ids!=0 and is_on_sale=1 limit "+num+",1000;";
+                    "common_name,manufacturer,goods_attr,license_number,first_py,brand_name from dsc_goods where lib_goods_ids!=0 and is_on_sale=1 limit "+num+",200;";
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()){

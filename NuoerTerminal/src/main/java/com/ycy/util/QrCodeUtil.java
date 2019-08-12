@@ -21,7 +21,7 @@ public class QrCodeUtil {
         //String url = "http://fservice.iesoo.com/mobile/index.php?m=user&c=login&a=Ytjcart&mobile_phone=13076035254&store_id=685";
         //String path = FileSystemView.getFileSystemView().getHomeDirectory() + File.separator + "testQrcode";
         String fileName = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + ".jpg";
-        createQrCode(url, "D://qrCode/jpg/", fileName);
+        createQrCode(url, "D://Terminal/jpg/", fileName);
         return fileName;
     }
 

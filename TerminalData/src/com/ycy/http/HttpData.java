@@ -54,9 +54,9 @@ public class HttpData {
                         }
                         goodsEntityService.saveOrUpdate(list);
                     }catch (Exception e){
-                        log.error("更新商品数据发生异常:"+e);
+                        log.error("更新商品数据发生异常:",e);
                     }
-                    num += 1000;
+                    num += 200;
                 }
                 log.info("------商品数据传送完成------");
                 try {
@@ -86,7 +86,7 @@ public class HttpData {
                         }
                         symptomEntityService.saveOrUpdate(list);
                     }catch (Exception e){
-                        log.error("更新症状数据发生异常:"+e);
+                        log.error("更新症状数据发生异常:",e);
                     }
                     num += 1000;
                 }
@@ -112,7 +112,7 @@ public class HttpData {
                 try {
                     brandEntityService.saveOrUpdate(brandEntityService.getBrandByYS());
                 }catch (Exception e){
-                    log.error("更新商家品牌发生异常:"+e);
+                    log.error("更新商家品牌发生异常:",e);
                 }
 
                 log.info("品牌数据传送完成");
@@ -136,7 +136,7 @@ public class HttpData {
                 try {
                     supplierEntityService.saveOrUpdate(getSupplierByYS());
                 }catch (Exception e){
-                    log.error("更新商家数据发生异常:"+e);
+                    log.error("更新商家数据发生异常:",e);
                 }
                 log.info("商家数据传送完成");
                 try {

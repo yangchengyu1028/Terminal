@@ -15,7 +15,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
          * addResourceHandler：访问映射路径
          * addResourceLocations：资源绝对路径
          */
-        registry.addResourceHandler("/jpg/**").addResourceLocations("file:D:/qrCode/jpg/");
+        registry.addResourceHandler("/jpg/**").addResourceLocations("file:D:/Terminal/jpg/");
     }
 }
 

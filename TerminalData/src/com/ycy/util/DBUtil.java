@@ -1,5 +1,8 @@
 package com.ycy.util;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.sql.*;
 
 /**
@@ -13,12 +16,15 @@ public class DBUtil {
     private static final String URL2 = ReadFile.getURL2();
     private static final String USER2 = ReadFile.getUSER2();
     private static final String PASSWORD2 = ReadFile.getPASSWORD2();
+    public static Log log = LogFactory.getLog(DBUtil.class);
+
 
     static{
         try {
             Class.forName(DRIVER);
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
+            log.error(" Class.forName(DRIVER)发生错误",e);
             e.printStackTrace();
         }
     }
@@ -29,7 +35,7 @@ public class DBUtil {
             conn = DriverManager.getConnection(URL1, USER1, PASSWORD1);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            log.error(" Connection发生错误",e);
         }
         return conn;
     }
